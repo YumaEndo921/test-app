@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 
+const articleRouter = require("./routes/article");
+app.use("/article", articleRouter);
+
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
