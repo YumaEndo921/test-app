@@ -1,6 +1,9 @@
+// .envファイルから環境変数をロード
+require('dotenv').config();
+
 const { Sequelize } = require('sequelize');
 
-const db = process.env.DATABASE_URL
+const db = process.env.NEXT_PUBLIC_DATABASE_URL
 
 const sequelize = new Sequelize(db,
     {
@@ -17,7 +20,6 @@ const sequelize = new Sequelize(db,
 
 
 const test = async ()=>{
-
     try {
         await sequelize.authenticate();
         console.log('Connection has been established successfully.');
